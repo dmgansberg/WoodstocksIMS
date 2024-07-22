@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9340AAB9-B406-4C00-ADF8-764E89C75A5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Woodstocks.WoodstocksIMS</RootNamespace>
+    <AssemblyName>WoodstocksIMSLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WoodstocksIMSLib.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\NUnit 2.6.3\bin\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CSV\CSVDataRecord.cs" />
+    <Compile Include="Data\CSV\CSVHeader.cs" />
+    <Compile Include="Data\CSV\CSVParser.cs" />
+    <Compile Include="Data\CSV\CSVReader.cs" />
+    <Compile Include="Data\CSV\CSVRecord.cs" />
+    <Compile Include="Data\CSV\CSVWriter.cs" />
+    <Compile Include="Data\CSV\FieldDoesNotExistException.cs" />
+    <Compile Include="Data\CSV\FieldNameArgumentIsNullException.cs" />
+    <Compile Include="Data\CSV\MissingValueException.cs" />
+    <Compile Include="Data\ImportAsyncException.cs" />
+    <Compile Include="Data\CSV\ToyExporterCSV.cs" />
+    <Compile Include="Domain\DuplicateToyException.cs" />
+    <Compile Include="Domain\ExportingState.cs" />
+    <Compile Include="Domain\IdleState.cs" />
+    <Compile Include="Domain\ImportationInProgressException.cs" />
+    <Compile Include="Domain\ImportingState.cs" />
+    <Compile Include="Domain\IWoodstocksIMS.cs" />
+    <Compile Include="Domain\IWoodstocksToyExporter.cs" />
+    <Compile Include="Domain\IWoodstocskIMSClient.cs" />
+    <Compile Include="Domain\OnOrder.cs" />
+    <Compile Include="Domain\SortOrder.cs" />
+    <Compile Include="Domain\ToyChangedEventArgs.cs" />
+    <Compile Include="Domain\ToyField.cs" />
+    <Compile Include="Domain\UnsavedDataException.cs" />
+    <Compile Include="Domain\WoodstocksIMS.cs" />
+    <Compile Include="Data\CSV\ToyImporterCSV.cs" />
+    <Compile Include="Domain\IToys.cs" />
+    <Compile Include="Domain\IWoodstocksToyImporter.cs" />
+    <Compile Include="Domain\ImportToysCompletedEventArgs.cs" />
+    <Compile Include="Domain\InvalidCurrentCountException.cs" />
+    <Compile Include="Domain\InvalidDescriptionException.cs" />
+    <Compile Include="Domain\InvalidItemCodeException.cs" />
+    <Compile Include="Domain\InvalidOnOrderException.cs" />
+    <Compile Include="Domain\IToy.cs" />
+    <Compile Include="Domain\Toy.cs" />
+    <Compile Include="Domain\Toys.cs" />
+    <Compile Include="Domain\WoodStocksDataConverter.cs" />
+    <Compile Include="Domain\WoodstocksIMSState.cs" />
+    <Compile Include="Domain\WoodStocksToyValidator.cs" />
+    <Compile Include="Presentation\AboutWoodstocksIMSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\AboutWoodstocksIMSForm.Designer.cs">
+      <DependentUpon>AboutWoodstocksIMSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\IWoodstocksIMSController.cs" />
+    <Compile Include="Presentation\IWoodstocksIMSView.cs" />
+    <Compile Include="Presentation\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SortOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Presentation\WoodstocksIMSForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\WoodstocksIMSForm.Designer.cs">
+      <DependentUpon>WoodstocksIMSForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\WoodstocksIMSController.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Presentation\AboutWoodstocksIMSForm.resx">
+      <DependentUpon>AboutWoodstocksIMSForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\WoodstocksIMSForm.resx">
+      <DependentUpon>WoodstocksIMSForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
