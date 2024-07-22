@@ -1,0 +1,4 @@
+Installation
+-------------------------
+
+Please place stocklist.csv in C:\StockFile on your system, until application is updated to allow for selection of data file.
